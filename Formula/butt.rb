@@ -8,7 +8,7 @@ class Butt < Formula
     depends_on "rust" => :build
 
     def install
-      system "cargo", "install", *std_cargo_args(path: "butt")
+      system "cargo", "install", *std_cargo_args(path: ".")
     end
 
     test do
