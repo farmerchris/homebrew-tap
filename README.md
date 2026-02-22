@@ -9,6 +9,14 @@
   git diff
 ```
 
+Add test if needed:
+
+```
+  test do
+    assert_match version.to_s, shell_output("#{bin}/butt --version")
+  end
+```
+
 Commit
 
 ```
