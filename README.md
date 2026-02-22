@@ -30,18 +30,16 @@ Test
 ```
   brew uninstall farmerchris/tap/butt || true
   brew untap farmerchris/tap || true
-  brew tap farmerchris/tap "file://$PWD"
+  brew tap farmerchris/tap-local "file://$PWD"
   brew audit --strict --online farmerchris/tap/butt
   HOMEBREW_NO_AUTO_UPDATE=1 brew reinstall --build-from-source farmerchris/tap/butt
   brew test farmerchris/tap/butt
+  brew uninstall farmerchris/tap/butt
 ```
 
 Push
 
 ```
-
-
-
   git push origin main
 ```
 
@@ -51,4 +49,4 @@ Test
   brew untap farmerchris/tap
   brew tap farmerchris/tap
   brew reinstall butt
-111
+```
