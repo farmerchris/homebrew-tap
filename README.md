@@ -48,5 +48,5 @@ Test
 ```
   brew untap farmerchris/tap
   brew tap farmerchris/tap
-  brew reinstall butt
+  brew reinstall farmerchris/tap/butt
 ```
