@@ -1,7 +1,6 @@
 class Butt < Formula
   desc "Throttled tail/stdin monitor with regex highlighting"
   homepage "https://github.com/farmerchris/butt"
-  version "0.1.3"
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/farmerchris/butt/releases/download/v0.1.3/butt-aarch64-apple-darwin.tar.xz"
@@ -52,5 +51,9 @@ class Butt < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/butt --version")
   end
 end

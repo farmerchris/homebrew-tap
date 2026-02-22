@@ -20,6 +20,7 @@ Commit
 Test
 
 ```
+  brew uninstall farmerchris/tap/butt || true
   brew untap farmerchris/tap || true
   brew tap farmerchris/tap "file://$PWD"
   brew audit --strict --online farmerchris/tap/butt
