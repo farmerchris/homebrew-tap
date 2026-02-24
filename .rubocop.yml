@@ -1,0 +1,5 @@
+AllCops:
+  Exclude:
+    - 'README.md'
+    - 'Taps/farmerchris/homebrew-tap/README.md'
+    # Add other file paths you want to exclude
