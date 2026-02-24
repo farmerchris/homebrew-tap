@@ -24,6 +24,20 @@ jobs:
       - name: Set up git
         uses: Homebrew/actions/git-user-config@main
 
+      - name: Delete existing butt bottle release/tag (if any)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          version="$(sed -nE 's|.*archive/refs/tags/v([^"]+)\.tar\.gz.*|\1|p' Formula/butt.rb | head -n 1)"
+          if [ -z "$version" ]; then
+            echo "Could not determine butt version from Formula/butt.rb"
+            exit 1
+          fi
+          tag="butt-$version"
+          gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --yes || true
+          git push --delete origin "$tag" || true
+
       - name: Pull bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
