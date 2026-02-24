@@ -6,6 +6,12 @@ class Butt < Formula
   license "MIT"
   version_scheme 1
 
+  bottle do
+    root_url "https://github.com/farmerchris/homebrew-tap/releases/download/butt-0.1.3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e65ccceee4a27e59f055994031733c4bd4049b75d055c2ff058c881f7f13f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4a4e450b707d5dc26636c7006208e817fa288c6b109f9e7a6ae2f93310873bf"
+  end
+
   depends_on "rust" => :build
 
   def install
