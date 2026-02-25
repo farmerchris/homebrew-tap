@@ -8,6 +8,8 @@ class Butt < Formula
 
   bottle do
     root_url "https://github.com/farmerchris/homebrew-tap/releases/download/butt-0.1.4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1294e37dd72517748fcb25bdcd3f0883d416e207a6b8f30349345885a3fe4290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f64f0e5a208bfe3aebb51b3f9fc347d165dfdab9d6527260be3c9e9ebc318711"
   end
 
   depends_on "rust" => :build
